@@ -1,0 +1,561 @@
+:root{
+    --negro: #343434;
+    --blanco: #ffffff;
+    --Fuente: "Cal Sans", sans-serif;
+    --morado: #4c00b0;
+    --yellow: #FFD700;
+    --negroOscuro:#000000;
+    --FuenteFrases: "Nunito Sans", sans-serif;
+    --FuenteParrafo: "Roboto", sans-serif;
+    --grisClaro: #DFE9F3;
+    --CelesteSaturado: #00b8ff;
+    --secundario: #0097A7;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1rem = 10px */
+    scroll-behavior: smooth;
+}
+
+/* SCROLL BAR CENTRADO */
+
+
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    font-size: 1.6rem;
+    line-height: 2;
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);;
+}
+
+/* GLOBALES */
+
+.contenedor{
+    margin: 0 auto;
+    max-width: 120rem;
+    width: 90%;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1, h2, h3 ,h4{
+    font-family: var(--Fuente);
+    line-height: 1.2;
+}
+
+h1{
+    font-size: 4.8rem;
+}
+
+h2{
+    font-size: 4rem;
+}
+
+h3{
+    font-size: 3.2rem;
+}
+
+h4{
+    font-size: 2.8rem;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    align-self: center;
+}
+
+span{
+    font-weight: bold;
+    font-size: 2.4rem;
+    color: var(--yellow);
+}
+
+p{
+    font-size: 1.8rem;
+}
+
+.nickname{
+    font-size: 2rem;
+    color: #0A0A0A;
+}
+
+
+/* ANIMACIONES */
+
+@keyframes appear{
+    from{
+        opacity: 0;
+        scale: 0.5;
+        /*transform: translateX(-100px);*/
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+        /*transform: translateX(0px);*/
+    }
+}
+
+
+.view_eras,
+.goodbye,
+.deathrace,
+.era__info,
+.song{
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+@media (min-width: 780px) {
+    .songs{
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+    }
+}
+
+
+
+
+/*--------------------- */
+
+/*SCROLL IZQUIERDA A DERECHA*/
+
+@keyframes appear_v1{
+    from{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.about__parrafo,
+.history__image{
+    animation: appear_v1 linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+/* ANIMACION PARA TEXTO */
+
+@keyframes texto_izder {
+    from {
+        left: -100%;
+        opacity: 0;
+    }
+
+    to {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+.titulo {
+    animation: texto_izder 0.6s ease-out;
+    position: relative;
+}
+
+@keyframes texto_deriz {
+    from {
+        left: 100%;
+        opacity: 0;
+    }
+
+    to {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+.frases{
+    animation: texto_deriz 0.6s ease-in-out;
+    position: relative;
+}
+
+
+
+/*SCROLL DE DERECHA A IZQUIERDA*/
+
+@keyframes appear_v2{
+    from{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+html,
+body {
+    overflow-x: clip;
+}
+
+.about__imagen,
+.history__contenido{
+    animation: appear_v2 linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+
+/* NAVEGACION */
+
+.navegacion{
+    background-color: var(--negro);
+    margin-bottom: 6rem;
+}
+
+.navegacion__display{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.navegacion__enlaces{
+    color: var(--blanco);
+    font-size: 2.3rem;
+    padding: 1rem;
+    font-weight: 500;
+    line-height: 1.2;
+    font-family: var(--Fuente);
+}
+
+.navegacion__enlaces:hover {
+    background-color: var(--morado);
+    transition: 0.5s;
+}
+
+@media (max-width: 768px) {
+    .navegacion__display{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.phrases{
+    text-align: center;
+}
+
+
+.inicio{
+    margin-bottom: 20rem;
+    margin-top: -6rem;
+    background-image: url(/imagenes/juice-wrld-concert-208al6fki2d5drbv.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    height: 100rem;
+}
+
+@media (min-width: 768px) {
+    .inicio {
+        margin-bottom: 20rem;
+        margin-top: -6rem;
+        background-image: url(/imagenes/juice-wrld-concert-208al6fki2d5drbv.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        height: 75rem;   
+    }
+}
+
+.inicio__contenido{
+    background-color: rgba(0,0,0,0.75);
+    height: 75rem;
+    padding-top: 5rem;
+}
+
+.titulo{
+    color: var(--blanco);
+    font-weight: 200;
+}
+
+.frases{
+    color: var(--blanco);
+    font-weight: 120;
+    font-family: var(--FuenteFrases);
+}
+
+
+/* Sobre JUICE WRLD */
+
+.about{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.about__parrafo{
+    font-family: var(--FuenteParrafo);
+}
+
+@media (min-width: 1200px) {
+    .about{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10rem;
+    }
+    .about__imagen{
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+}
+
+
+.view{
+    margin-bottom: 12rem;
+}
+
+
+/* HISTORY */
+
+.history{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 1200px) {
+    .history {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10rem;  
+    }
+}
+
+.history__parrafo{
+    font-family: var(--FuenteParrafo);
+}
+
+/* ERAS */
+
+.span__eras{
+    font-size: 7rem;
+}
+
+.era__parrafo{
+    font-family: var(--FuenteParrafo);
+}
+
+.song{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    align-items: stretch;
+    overflow: hidden;
+}
+
+
+@media (min-width: 1080px) {
+    .songs{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 5rem;
+        align-items: stretch;
+    }
+}
+
+.song img {
+    width: 100%;
+    height: auto;
+    align-self: start;
+    justify-self: center;
+}
+
+.album__info{
+    font-family: var(--FuenteParrafo);
+    flex-grow: 1;
+    margin-bottom: 1rem;
+}
+
+.button__contenedor{
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: 5rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .button__contenedor {
+        text-align: center;
+        margin-top: 2.5rem;   
+    }
+}
+
+.song__button{
+    width: 18rem;
+    height: 5rem;
+    background-color: var(--secundario);
+    font-weight: bold;
+    border-radius: 0.5rem;
+    border-color: none;
+}
+
+.button__text{
+    font-family: var(--FuenteFrases);
+    color: var(--blanco);
+    font-size: 2rem;
+    align-content: center;
+}
+
+.song__button:hover{
+    background-color: var(--CelesteSaturado);
+    transition: 0.3s;
+    cursor: pointer;
+}
+/* EP 999 */
+
+.span__ep{
+    color: #ff1902;
+}
+
+
+/*Good Bye and Good Rydance*/
+
+.goodbye{
+    margin-top: 5rem;
+}
+.songs__lucid{
+    margin-top: 0rem;
+}
+
+.songs__contenido{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 50rem;
+}
+
+
+@media (min-width: 768px) {
+    .parrafo__lucid{
+        margin-top: 6.2rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .parrafo__black{
+        margin-top: 6rem;
+    }
+}
+
+
+/* DEATH RACE FOR LOVE */
+
+.span__death{
+    color: #ff4000;
+}
+
+/* LEGENDS NEVER DIE */
+
+.span__legend{
+    color: #ff0080;
+}
+
+/* Fighting Demons */
+
+.span__fight{
+    color: #000000;
+}
+
+/* TPNE */
+
+.tpne__contenedor{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.tpne{
+    max-width: 120%;
+}
+
+@media (min-width: 780px) {
+    .tpne {
+        display: flex;
+        max-width: 50%;
+        justify-content: center;   
+    }
+}
+
+
+.empty{
+    text-align: start;
+    font-size: 3.8rem;
+}
+
+.span__empty{
+    color: var(--negroOscuro)
+}
+
+.span__party{
+    color: var(--morado);
+}
+
+/* LEGEND */
+
+.legend{
+    column-gap: 4rem;
+}
+
+.span__creado{
+    color: var(--CelesteSaturado);
+}
+
+.parrafo__creado{
+    font-family: var(--Fuente);
+    font-weight: normal;
+    letter-spacing: 0.2rem;
+}
+
+/* CONTACTO */
+
+.barra{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--negro);
+    padding-bottom: 1rem;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.barra__circulo {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: transparent;
+}
+
+.barra__enlaces{
+    text-decoration: none;
+    color: var(--blanco);
+    font-family: var(--Fuente);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.barra__circulo:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
